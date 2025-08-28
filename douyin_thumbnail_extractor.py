@@ -203,6 +203,7 @@ def main():
         # Skip non-douyin URLs
         if 'douyin' not in url:
             print("  → Skipping (not a douyin URL)")
+            results.append("no-thumbnail.com")  # Placeholder for skipped URLs
             continue
         
         thumbnail = extract_thumbnail(url)
@@ -212,7 +213,7 @@ def main():
             results.append(thumbnail)
         else:
             print("  → No thumbnail found")
-            # Don't add anything to results for URLs without thumbnails
+            results.append("no-thumbnail.com")  # Placeholder for failed extractions
         
         # Small delay to be polite to the server
         if i < len(urls):

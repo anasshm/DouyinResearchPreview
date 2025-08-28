@@ -144,22 +144,28 @@ def generate_gallery():
     <h1>🎥 Douyin Video Gallery</h1>
 """
     
-    # Calculate how many thumbnails we can display
+    # Process pairs and skip failed thumbnails
+    valid_pairs = []
     num_pairs = min(len(video_urls), len(thumbnail_urls))
     
-    if num_pairs > 0:
-        html_content += f'    <div class="stats">Showing {num_pairs} videos</div>\n'
+    for i in range(num_pairs):
+        video_url = video_urls[i]
+        thumbnail_url = thumbnail_urls[i]
+        
+        # Skip entries with placeholder URLs (containing "no-thumbnail.com")
+        if "no-thumbnail.com" not in thumbnail_url:
+            valid_pairs.append((video_url, thumbnail_url))
+    
+    if valid_pairs:
+        html_content += f'    <div class="stats">Showing {len(valid_pairs)} videos with thumbnails</div>\n'
         html_content += '    <div class="gallery">\n'
         
-        for i in range(num_pairs):
-            video_url = video_urls[i]
-            thumbnail_url = thumbnail_urls[i]
-            
+        for i, (video_url, thumbnail_url) in enumerate(valid_pairs, 1):
             html_content += f'''        <div class="video-card">
             <a href="{video_url}" target="_blank" rel="noopener noreferrer">
-                <img src="{thumbnail_url}" alt="Video {i+1}" loading="lazy">
+                <img src="{thumbnail_url}" alt="Video {i}" loading="lazy">
                 <div class="video-info">
-                    <div class="video-number">Video #{i+1}</div>
+                    <div class="video-number">Video #{i}</div>
                     <div class="video-link">{video_url}</div>
                 </div>
             </a>
@@ -178,14 +184,19 @@ def generate_gallery():
         f.write(html_content)
     
     print(f"✅ Gallery created successfully!")
-    print(f"📊 Generated gallery with {num_pairs} videos")
+    print(f"📊 Generated gallery with {len(valid_pairs)} videos with thumbnails")
     print(f"🌐 Open 'gallery.html' in your browser to view")
     
-    # Note about mismatched counts
+    # Show statistics about failed extractions
+    failed_count = num_pairs - len(valid_pairs)
+    if failed_count > 0:
+        print(f"\n📝 Note: Skipped {failed_count} videos without thumbnails")
+        print("   Videos with failed thumbnail extraction are not shown in the gallery.")
+    
+    # Note about mismatched total counts
     if len(video_urls) != len(thumbnail_urls):
-        print(f"\n⚠️  Warning: Found {len(video_urls)} video URLs but {len(thumbnail_urls)} thumbnails")
-        print("   Some videos might not have thumbnails extracted.")
-        print("   The gallery shows only videos with thumbnails.")
+        print(f"\n⚠️  Warning: Found {len(video_urls)} video URLs but {len(thumbnail_urls)} thumbnail entries")
+        print("   This might indicate an issue with the extraction process.")
     
     return True
 
