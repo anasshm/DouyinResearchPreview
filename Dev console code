@@ -1,0 +1,80 @@
+(async () => {
+  const candidates = new Set();
+
+  // 1) Common meta tags
+  document.querySelectorAll(
+    'meta[property="og:image"],meta[name="og:image"],meta[name="twitter:image"],meta[property="twitter:image"]'
+  ).forEach(m => m.content && candidates.add(m.content));
+
+  // 2) DOM elements (video poster, visible images)
+  const v = document.querySelector('video');
+  if (v) {
+    const p = v.getAttribute('poster'); if (p) candidates.add(p);
+    v.querySelectorAll('source').forEach(s => {
+      ['src','data-src'].forEach(a => s.getAttribute(a) && candidates.add(s.getAttribute(a)));
+    });
+  }
+  Array.from(document.images).forEach(img => {
+    ['src','data-src'].forEach(a => img.getAttribute(a) && candidates.add(img.getAttribute(a)));
+  });
+
+  // 3) Embedded JSON in script tags (RENDER_DATA / SIGI_STATE, etc.)
+  const tryParse = (txt) => {
+    const tryOne = t => { try { return JSON.parse(t) } catch (_) { return null } };
+    return tryOne(txt) || tryOne(decodeURIComponent(txt)) || null;
+  };
+  const walk = (o) => {
+    if (!o || typeof o !== 'object') return;
+    if (Array.isArray(o.url_list)) o.url_list.forEach(u => candidates.add(u));
+    ['cover','origin_cover','dynamic_cover','poster','download_addr','play_addr'].forEach(k => {
+      const v = o[k];
+      if (!v) return;
+      if (Array.isArray(v.url_list)) v.url_list.forEach(u => candidates.add(u));
+      if (typeof v === 'string') candidates.add(v);
+    });
+    Object.values(o).forEach(walk);
+  };
+  for (const s of document.scripts) {
+    const t = s.textContent.trim();
+    if (!t) continue;
+    let data = tryParse(t);
+    if (!data) {
+      const m = t.match(/=\s*({[\s\S]*?});?\s*$/);
+      if (m) data = tryParse(m[1]);
+    }
+    if (data) walk(data);
+  }
+
+  // 4) Fallback: fetch raw HTML and scrape origin_cover/url_list
+  if (candidates.size === 0) {
+    const html = await fetch(location.href, {credentials:'include'}).then(r => r.text()).catch(()=>null);
+    if (html) {
+      // Grab url_list under origin_cover or cover
+      const pickFromBlock = (name) => {
+        const m = html.match(new RegExp('"' + name + '"[\\s\\S]*?"url_list"\\s*:\\s*\\[([^\\]]+)\\]'));
+        if (!m) return null;
+        const urls = Array.from(m[1].matchAll(/"(https?:[^"]+)"/g)).map(x => x[1]);
+        return urls[urls.length - 1] || urls[0];
+      };
+      const u1 = pickFromBlock('origin_cover');
+      const u2 = pickFromBlock('cover');
+      if (u1) candidates.add(u1);
+      if (u2) candidates.add(u2);
+
+      // Very loose fallback: any Douyin/Bytedance image URL
+      const loose = Array.from(html.matchAll(/https?:\/\/[^\s"'()]+?(douyin|byteimg|pstatp)[^\s"'()]*/g)).map(m=>m[0]);
+      loose.forEach(u => candidates.add(u));
+    }
+  }
+
+  const arr = [...candidates].filter(Boolean);
+  const isDouyinImg = u => /(douyin|byteimg|pstatp|douyinpic)/.test(u) && /\.(jpe?g|png|webp|bmp|heic)(?:$|\?)/i.test(u.split('?')[0]);
+  const images = arr.filter(isDouyinImg);
+  const imagesLoose = arr.filter(u => /(douyin|byteimg|pstatp|douyinpic)/.test(u));
+
+  const url = images[images.length - 1] || imagesLoose[imagesLoose.length - 1];
+  if (!url) return alert('Still no thumbnail on this variant. Try the mobile page (replace www. with m.) and run again.');
+  console.log('Thumbnail:', url);
+  try { copy(url); } catch (_) {}
+  window.open(url, '_blank');
+})();

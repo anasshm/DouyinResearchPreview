@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douyin Video Gallery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fe2c55;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .video-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #161823;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-card a {
+            display: block;
+            text-decoration: none;
+        }
+        
+        .video-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+        }
+        
+        .video-info {
+            padding: 12px;
+            background-color: #161823;
+        }
+        
+        .video-number {
+            color: #8a8b91;
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+        
+        .video-link {
+            color: #fe2c55;
+            font-size: 0.85em;
+            word-break: break-all;
+            opacity: 0.8;
+        }
+        
+        .no-videos {
+            text-align: center;
+            color: #8a8b91;
+            font-size: 1.2em;
+            margin-top: 50px;
+        }
+        
+        .stats {
+            text-align: center;
+            color: #8a8b91;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 Douyin Video Gallery</h1>
+    <div class="stats">Showing 55 videos</div>
+    <div class="gallery">
+        <div class="video-card">
+            <a href="Here are the links you requested:" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/f0d4a785c7954d78942ab502b4dda5f0_1641952582~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=mFhe0d1k39zGLeUuZjG5Mf0s40M%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034904FF46A47A3B28F85CC819" alt="Video 1" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #1</div>
+                    <div class="video-link">Here are the links you requested:</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/H2vQlHoj_44/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/4efd5a911f92437bbe01ec2c328e7045~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=08FEJO9gtG3ylUIwAQ%2F6ENSA40g%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349069DC3576D03121358E177" alt="Video 2" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #2</div>
+                    <div class="video-link">https://v.douyin.com/H2vQlHoj_44/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/H0BtOSydifg/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/7780c778038442ba834873f35846c14c~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Sam6%2FEqvJNQFNEJOqXzbXGvTnXc%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034908498C7686587323552407" alt="Video 3" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #3</div>
+                    <div class="video-link">https://v.douyin.com/H0BtOSydifg/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/cXRieOTMXVo/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/4fac0896585e419aa00c46ad2906a013_1645752102~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Mgxi%2BFLzuvO26pwl65DIxeAz1co%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034910BA10BA8565C3A25813BA" alt="Video 4" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #4</div>
+                    <div class="video-link">https://v.douyin.com/cXRieOTMXVo/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/Hw-kYv5mqdU/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/6fd5f9168e66464fa273df4669fad11c~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=okVBXFD%2BxvohU7VWrnGZD4TFYZ0%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349121211D0D6E83AD456AB9F" alt="Video 5" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #5</div>
+                    <div class="video-link">https://v.douyin.com/Hw-kYv5mqdU/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/jooNLYs3-aU/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/4d5199ad7a69435c9dd036fdaac2747e_1634609324~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=9ghUjxpOH4U757Xw49DcYBMNGsk%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034914E2DCB9ACDDD25956E181" alt="Video 6" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #6</div>
+                    <div class="video-link">https://v.douyin.com/jooNLYs3-aU/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/9ErcPjdUHm4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/8ad73e22529b43218f425da27a8e49bd~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=EZ3Hn%2FXNfblmUbu0aPTmiv4MWXI%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349169D9DBDAC28A6E8585F66" alt="Video 7" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #7</div>
+                    <div class="video-link">https://v.douyin.com/9ErcPjdUHm4/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/MS1PrM5ZT1M/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/f26c8767e5454e7b86f61b7085bbf019~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Hi1g7WB6ig9ScCUh9o3fsE4b2Jw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034919BA0B5EEC5733E5542516" alt="Video 8" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #8</div>
+                    <div class="video-link">https://v.douyin.com/MS1PrM5ZT1M/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/yZiCPD4-CCc/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/6edb9031925a4c7fbd0dba12b9621a19~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=9oPfmLKQM0BpoOd71GAb4%2F7gvZ8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349217A477C64E69E7655F084" alt="Video 9" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #9</div>
+                    <div class="video-link">https://v.douyin.com/yZiCPD4-CCc/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/gnJwrpP48eE/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/o8eBwiAdBKmfb28kMzrbAQDjUnEAIQJsBaWlig~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=oG9qR4QN1wqXWVL%2BV4PFVILC4fo%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034923D253BC09A0D1AC55D6A8" alt="Video 10" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #10</div>
+                    <div class="video-link">https://v.douyin.com/gnJwrpP48eE/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/CqZhT0v_GJA/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/18533c837b514a8aba59d137b7e31f27~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Vyn8a3j61zTzIrQIdZvGUJ7%2FT0Y%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349256C4BA1B5876D6752288A" alt="Video 11" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #11</div>
+                    <div class="video-link">https://v.douyin.com/CqZhT0v_GJA/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/QbK1dnyKio8/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/1da900f309564da49128644ec925e097~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=QnLJdUyo723qMLGunvQlk%2BSgu7Q%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034927053F7691A88C34588AE2" alt="Video 12" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #12</div>
+                    <div class="video-link">https://v.douyin.com/QbK1dnyKio8/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/nQZ1t8TztHY/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/e06ff0417c214497a6f90aaa546c5142~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=jU3ZBELiz%2FBpBwcpLnxdDMeLaYg%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034930BACCE7F8DD8D67580AAF" alt="Video 13" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #13</div>
+                    <div class="video-link">https://v.douyin.com/nQZ1t8TztHY/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/ivcXQlsqZTA/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p9-sign.douyinpic.com/tos-cn-p-0015/b0f38d947ebd4c4a949d2bf509e259c8~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=dkADZvDuUOigXSYulHOL2WxP%2BjQ%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349323DAE215E7D699757E772" alt="Video 14" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #14</div>
+                    <div class="video-link">https://v.douyin.com/ivcXQlsqZTA/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/n083KyRD81c/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/o42A4BDoWknM9TgJDMePexaAbTNDPjQAgEIPtE~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=pocIGI6uHTcOUuBTgnLXgrjHuJE%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703493484A28C1A52233C5C9E87" alt="Video 15" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #15</div>
+                    <div class="video-link">https://v.douyin.com/n083KyRD81c/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/chGJYNydmDQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/110aaad63e044b839cfbb7c5b3f359a0~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=gmdi7ZIapQHZ8g75QXHq65wbDJw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349365179C984FF21495A23E2" alt="Video 16" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #16</div>
+                    <div class="video-link">https://v.douyin.com/chGJYNydmDQ/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/nu8Npp9xg0w/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/fa58cdcbb871424f90c42ae90fc39aca~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=1bZD7E%2FxpW5Yrwx9sif8r8rjHes%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034938D959404B39E5FD5362EF" alt="Video 17" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #17</div>
+                    <div class="video-link">https://v.douyin.com/nu8Npp9xg0w/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/iWlz5BErnb8/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/oke5Xh02I1pfAL368CIIwACep1QcEIG6DQwe2d~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=PiU6C%2F%2B5%2BDvpneYFXXbtoEv8j40%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034940C086C52F0DFA4955E600" alt="Video 18" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #18</div>
+                    <div class="video-link">https://v.douyin.com/iWlz5BErnb8/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/002mADuaQMU/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/oIAk2eeSnQGGYDGwAmeAac73kEbOJABIDTAcBg~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=OC71%2B0t0UhDcFstROYokySvM4Vc%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034942F1C1B50A9AE1CA525CEA" alt="Video 19" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #19</div>
+                    <div class="video-link">https://v.douyin.com/002mADuaQMU/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/DFdAs8_Z6pE/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/oQbXAehDykNIEgDdJ4jeUAHnCWAy4I9jYYNAAA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=1hFs%2Bp6M1TnK80Bo%2BVU8VBMfqic%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349445DF0265935EA6F52C967" alt="Video 20" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #20</div>
+                    <div class="video-link">https://v.douyin.com/DFdAs8_Z6pE/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/PMFiDpLn5Lw/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/oUrhAWcHEcCANsdBzpvzNAAevxAfBZKgWSoyI1~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Pt01aKtjvjnPoYsLVPbBg0SOmNY%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349468B8A636EC92931567F38" alt="Video 21" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #21</div>
+                    <div class="video-link">https://v.douyin.com/PMFiDpLn5Lw/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/5W9UT_-gjgk/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/o4bBUs5bzGXl8AAwQ93E9fRngD7ANeHAkuM6gI~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Mk%2FRNK%2Fsfd0hYMkxcDVcsAiho3Q%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034948D28F4D7B0703D953F953" alt="Video 22" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #22</div>
+                    <div class="video-link">https://v.douyin.com/5W9UT_-gjgk/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/JfPvI4eptHw/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p9-sign.douyinpic.com/tos-cn-i-0813c001/ogCAAwyIIEPzyCyGgZNDANhCfAAeAAhILkHIAE~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=zAZauTBmzhraLZX8dVkSAjBjUHQ%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034951153B754840D06F55142C" alt="Video 23" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #23</div>
+                    <div class="video-link">https://v.douyin.com/JfPvI4eptHw/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/wfg3F8cKTSQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/oIU8QqN9EALOkBnyAmg8fPGeIb4klZDBzC8P5A~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=qXfN%2FeBHPcTkdr89v1ddhtkypIo%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034953B6F8577CB92AA855A060" alt="Video 24" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #24</div>
+                    <div class="video-link">https://v.douyin.com/wfg3F8cKTSQ/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/Gbxt4QzkD_A/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813/oQzHADBJIC5ooEhFpNeIAKIA7FbP5goyA7AAfy~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=aL%2FZ0jBe4wGTxUdvh43IB4ubNn4%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034955E331AB7220764053E86E" alt="Video 25" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #25</div>
+                    <div class="video-link">https://v.douyin.com/Gbxt4QzkD_A/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/4gBRzp03YV0/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/oc2y8BzMEABh9zPbtAAgIPdf0Cg8B99bmOOeNT~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=0tHEnSIJMrF87AAefADfOsom8tE%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827034957E173A1CD37C89954D64C" alt="Video 26" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #26</div>
+                    <div class="video-link">https://v.douyin.com/4gBRzp03YV0/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/XxfGjUjQ6Ug/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/owVfbAn1qoGAHe9okkW9AANAgI0uC1pQAAL1DY~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=QqR%2FXq4C2mNfgICE4Hnc7b7wEeg%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270349592BF1AF6D5E1B175631B5" alt="Video 27" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #27</div>
+                    <div class="video-link">https://v.douyin.com/XxfGjUjQ6Ug/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/M8I26tL2xMQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813c001/okBJ1k0iABIgQAZEAAFoJIMQPEiAP0Dhgm0SI~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Kix%2FcsieyXMtYTBLAcdNIUny5JI%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035001507EC000B42459583D76" alt="Video 28" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #28</div>
+                    <div class="video-link">https://v.douyin.com/M8I26tL2xMQ/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/WZjNcj6hdB4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/oAEiB6I3PiVUwkgrAQApTIDxACBCIbAaqCAPA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=6hUnShzD%2BuSJnA6%2BQq9SMUAC32s%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035003C92D82F8503FEE59B815" alt="Video 29" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #29</div>
+                    <div class="video-link">https://v.douyin.com/WZjNcj6hdB4/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/NscmpD5DTMs/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/oUUEqvb2IEPHZPSm9IZiA7BQ7Wivg5zFl99A3~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=KsM7d4cyXE0y7vfsqgu4KSzoWEw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035005D9459BF8E720E5533DCB" alt="Video 30" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #30</div>
+                    <div class="video-link">https://v.douyin.com/NscmpD5DTMs/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/47q01wzlGDY/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/ow7EQFBvAdrfDffWCPZKAaG92AEBIArNDWZaEA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=xFuXTydV5yRcybiFtaGfTZWQ0tI%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035007AC1ED98AF97716544477" alt="Video 31" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #31</div>
+                    <div class="video-link">https://v.douyin.com/47q01wzlGDY/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/IzNe92lE_gE/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/ooBMEAQVgy62qAAqiAikaAAgiYZvWVIYRizIP~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=DFx5zyajQ1rtU6OtNE0jllZ8TFI%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035010E357C231BEE85D538CCD" alt="Video 32" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #32</div>
+                    <div class="video-link">https://v.douyin.com/IzNe92lE_gE/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/6iBDT2uUabY/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/owlE4MIAPia0BWiZ0pAGAIGgNQbAjmvpAA4wD~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=K4dbrJtSTQ%2Fz36I0Og6TdPs8Baw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270350121078582159866F5483C7" alt="Video 33" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #33</div>
+                    <div class="video-link">https://v.douyin.com/6iBDT2uUabY/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/OdAWvj64GNk/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/o8B6AIiiCw9H8uBAigAED7aLnABAbI2v6EPLD~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=p7COQasjbxF7Ltv6k5bA3cV7EWw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703501430A1915DB48D7653AC17" alt="Video 34" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #34</div>
+                    <div class="video-link">https://v.douyin.com/OdAWvj64GNk/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/2SwVjUoLkTc/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/owAAcFxB8HfwDjpA9fCCIFAsgCEgAAAIPounEU~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=Ib5evYTSI7jsSeSoU2alyGAfw2g%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035016EBB2A11FF14E7851C3E5" alt="Video 35" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #35</div>
+                    <div class="video-link">https://v.douyin.com/2SwVjUoLkTc/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/scZvNUQCAxc/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/oEUF2zyXdIIADAChnICFECeEQzDAF8AJfAfe7w~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=7eXKmgyO53XLIe7p3BMvKiB6x8g%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703501861C904A1FEA42E5768EF" alt="Video 36" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #36</div>
+                    <div class="video-link">https://v.douyin.com/scZvNUQCAxc/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/_vEGJ1dUuBQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/og0ReHgLAAAYA78fAQL0VcGGneR9RETIBBEKqg~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=cAItnLlj2uBeaHy847K9iKbeuiw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035020C81F6025AECAEB5A5CEA" alt="Video 37" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #37</div>
+                    <div class="video-link">https://v.douyin.com/_vEGJ1dUuBQ/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/IYuMdec-m44/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p9-sign.douyinpic.com/tos-cn-i-0813/ogyFWACVI39DFgAvOfptSQWcoFA0ZD5eqAEgAA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=%2FzopodH0xUyfz3b4Ztl1dgjcuZY%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035023B3620F6849523054CEBC" alt="Video 38" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #38</div>
+                    <div class="video-link">https://v.douyin.com/IYuMdec-m44/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/pJh23aYUZGE/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/oYIAQM2eY7mI8BD2xxpigALesAeGeFACAhOESI~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=FCXoW0xi0peTIkEDS0KAHb9mC68%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035025DE1A2D957BCA435076B9" alt="Video 39" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #39</div>
+                    <div class="video-link">https://v.douyin.com/pJh23aYUZGE/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/3knpBUZOln4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/oYEeAbcTfXUAcBtAhRQMHt84AAfNAuDtBG73R7~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=azAkThUCkKlm%2BYuqFQooiEy3jes%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035027B6481E44D22DEE54D3CD" alt="Video 40" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #40</div>
+                    <div class="video-link">https://v.douyin.com/3knpBUZOln4/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/TMul7sxomoM/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813/oEHYIAnAeIBAQDdfyCEAP7B0AWUiiAD5CgpiMQ~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=oZ8tPhsu%2ByVowGu3IguDor%2FYzuE%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035029CAC27DEDC77FA2534990" alt="Video 41" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #41</div>
+                    <div class="video-link">https://v.douyin.com/TMul7sxomoM/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/T28cdkGAOEQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/owehdfg4bAEoUBD2Bn9jBHBOkDAD8AiSMZCIRr~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=nUVvG5XUMLw5fZsQ3atZ4Ow6KR8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703503152C5190D919C8753DC3A" alt="Video 42" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #42</div>
+                    <div class="video-link">https://v.douyin.com/T28cdkGAOEQ/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/iReFgpCTD1Y/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p11-sign.douyinpic.com/tos-cn-i-0813/ogWPNiBxeAANtIAJTyiEaQCAyAkgB7Ar2zfIMC~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=HfjROXtsd97%2FSH31Gs2IG%2FGdwjE%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035033EBF0A6ABD6761C553E15" alt="Video 43" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #43</div>
+                    <div class="video-link">https://v.douyin.com/iReFgpCTD1Y/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/6fLpPX4NW-Q/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813/osCAETB1iAZeuU4vA9RlAC0AyxpEICAfgmFjni~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=RTo2QDML%2FEmRRs0Eaqpi4vKJ9vw%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035036D29C65560F43FC597ADA" alt="Video 44" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #44</div>
+                    <div class="video-link">https://v.douyin.com/6fLpPX4NW-Q/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/4solFCim54c/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813/oEm1HYA8QIBFUeABoANBtGfENg6ZaNAeAAzLJ7~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=VPJUzhhF%2F9%2FNNfmYFYh7vzj4Lc8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270350382D1FC4CDDD8C6A522D6C" alt="Video 45" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #45</div>
+                    <div class="video-link">https://v.douyin.com/4solFCim54c/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/knEgJZFBrQU/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/oAeTnAfeaDIAWD7CBmA5ElFEBYAtAPG6DqBBED~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=MKgC1KewBZuHxlrCUk3SVgZfSys%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035042AEE84BD8E66B0C526F2C" alt="Video 46" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #46</div>
+                    <div class="video-link">https://v.douyin.com/knEgJZFBrQU/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/qQrSS0G8eF4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://sf1-cdn-tos.douyinstatic.com/obj/eden-cn/kpchkeh7upepld/fe_app_new/logo_launcher_v2.png" alt="Video 47" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #47</div>
+                    <div class="video-link">https://v.douyin.com/qQrSS0G8eF4/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/mKWgd1DZH1s/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/5b2b8a72966e49d1b4839b44e53cb607~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=GM9Kax7VdOsRSnmDy54s4WgT9P4%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035046F8F3030410F511564E8E" alt="Video 48" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #48</div>
+                    <div class="video-link">https://v.douyin.com/mKWgd1DZH1s/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/OLDUFwUpM1Y/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-dy/d7cc6b1098ce4587bcdd089a50cb3e30~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=m2KvnicYfl79tzlJ6XBgUWhbcsM%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270350491F77FB29A85BAF548F25" alt="Video 49" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #49</div>
+                    <div class="video-link">https://v.douyin.com/OLDUFwUpM1Y/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/LdlNUHAPH68/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/1bc7eb1dd96845578544651fe352c176~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=MTjbJn8r35pOh0HgfdzgWEr28WQ%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035051CA0A9AAFB7251B5BA63E" alt="Video 50" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #50</div>
+                    <div class="video-link">https://v.douyin.com/LdlNUHAPH68/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/pvanYR_Bpw0/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813c001/oENiOounELFnAFPBkACEAgAcjiAYChDmAI6f9f~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=A8ErXNNBwVP8J6HxvnRYBp47Dp4%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270350538EBB71D426E34958A02D" alt="Video 51" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #51</div>
+                    <div class="video-link">https://v.douyin.com/pvanYR_Bpw0/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/jni56e8WoMs/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p11-sign.douyinpic.com/tos-cn-i-0813c000-ce/oIAUCAxZ7nPPdJWiQ5XwHWMFBAIahiGVQAQAE~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=uQkXGyljksodRxHo1yYnv%2BFY2PM%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508270350555E24B41372DA6D56526B" alt="Video 52" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #52</div>
+                    <div class="video-link">https://v.douyin.com/jni56e8WoMs/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/Qhn_SpGNmKw/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/o4dfHHefig6ZQWiZJbeGwZavHQinKyIQBeBf8W~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=zZAKZ%2BNMg6eX%2BRNB469YHnhSOlc%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250827035057F2943EB9D6455E53B49B" alt="Video 53" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #53</div>
+                    <div class="video-link">https://v.douyin.com/Qhn_SpGNmKw/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/c1Ua9nfax-g/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015/ogeDh54PAhP785PA5YkA20H2PfAA243CI9pffE~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=y4ZV5hNbMJdPtEhx5%2FR2GoBvCpc%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703505975A28B4396B42659FD1C" alt="Video 54" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #54</div>
+                    <div class="video-link">https://v.douyin.com/c1Ua9nfax-g/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/ayV6fq3soR4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p26-sign.douyinpic.com/tos-cn-p-0015/oA8Qe47ABtMOf5cQ0AWBZIm3BSTxQACeQFDanA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757444400&x-signature=pmZk2r%2FiafTfW34VnHrOAhr43vg%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082703510262452E95FC70A554543A" alt="Video 55" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #55</div>
+                    <div class="video-link">https://v.douyin.com/ayV6fq3soR4/</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
