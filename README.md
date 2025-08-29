@@ -1,5 +1,7 @@
 # Douyin Thumbnail Extractor
 
+**always read the readme**
+
 A simple Python script that extracts thumbnail URLs from m.douyin.com links.
 
 ## Setup
