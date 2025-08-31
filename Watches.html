@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douyin Video Gallery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fe2c55;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .video-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #161823;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-card a {
+            display: block;
+            text-decoration: none;
+        }
+        
+        .video-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+        }
+        
+        .video-info {
+            padding: 12px;
+            background-color: #161823;
+        }
+        
+        .video-number {
+            color: #8a8b91;
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+        
+        .video-link {
+            color: #fe2c55;
+            font-size: 0.85em;
+            word-break: break-all;
+            opacity: 0.8;
+        }
+        
+        .no-videos {
+            text-align: center;
+            color: #8a8b91;
+            font-size: 1.2em;
+            margin-top: 50px;
+        }
+        
+        .stats {
+            text-align: center;
+            color: #8a8b91;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 Douyin Video Gallery</h1>
+    <div class="stats">Showing 4 videos with thumbnails</div>
+    <div class="gallery">
+        <div class="video-card">
+            <a href="https://v.douyin.com/dTFxpFZ1liI/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p11-sign.douyinpic.com/tos-cn-p-0015/o4xRIKLvA057AIIsQbQCUyLMBkBeGFeLCaCeG5~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757595600&x-signature=xmh0lnfcPDGdm8zaK4hI6UkL3yM%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250828212500802323904C6D06452667" alt="Video 1" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #1</div>
+                    <div class="video-link">https://v.douyin.com/dTFxpFZ1liI/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/tufxUrlV0pI/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c000-ce/oYI9GeoAu6hfNT1aDEEzWmFCAAAE4wf8E4AAAZ~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757595600&x-signature=MzmpN2WF5LZb0muVFJG8VmWakqY%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508282125023A2DFA10FF1CC2502B02" alt="Video 2" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #2</div>
+                    <div class="video-link">https://v.douyin.com/tufxUrlV0pI/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/9Le6vN79i-0/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-p-0015c000-ce/ocaA4CEL42D895wwtGPfFcoEfkeDFoIAuBEacd~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757595600&x-signature=t91Rj9uXG6tRQ9rZazM8QG5gGa8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202508282125140A2E3A107A6A0054494B" alt="Video 3" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #3</div>
+                    <div class="video-link">https://v.douyin.com/9Le6vN79i-0/</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://v.douyin.com/itYbPq9xHFQ/" target="_blank" rel="noopener noreferrer">
+                <img src="https://p3-sign.douyinpic.com/tos-cn-i-0813c001/owXpC0ztiVWLAiKC1ADEAgAYRSAVCsB8AISfe6~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1757595600&x-signature=Hv35JTZCoTycrQQPPAEPV3L95DY%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2025082821252140AF74899A261B496D15" alt="Video 4" loading="lazy">
+                <div class="video-info">
+                    <div class="video-number">Video #4</div>
+                    <div class="video-link">https://v.douyin.com/itYbPq9xHFQ/</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
